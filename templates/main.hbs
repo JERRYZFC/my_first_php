@@ -1,0 +1,41 @@
+<div class="entry">
+  <h1>{{article.title}}</h1>
+  <div class="body">
+    Hello, my name is {{name}}
+
+
+  </div>
+
+    <div>
+        {{#each posts}}
+            <a href="/posts/{{../permalink}}/{{id}}">{{title}}</a>
+            {{content}}
+        {{/each}}
+    </div>
+
+    {{#if isActive}}
+        This part will be shown because it is active
+    {{else}}
+        This part will be shown because isActive is not true
+    {{/if}}
+
+    {{#unless isActive}}
+        This part will not show if isActive is true
+    {{/unless}}
+
+    <h2>All genres:</h2>
+    {{#each genres}}
+        {{.}}
+    {{/each}}
+
+    {{#each cars}}
+        <h3>{{category}}</h3>
+        Total: {{count}}
+        <ul>
+            {{#each list}}
+                {{.}}
+            {{/each}}
+        </ul>
+    {{/each}}
+
+</div>
